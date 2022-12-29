@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ensias.doctorsapp">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name="com.ensias.doctorsapp.MyCalendarDoctorActivity"></activity>
+        <activity android:name="com.ensias.doctorsapp.TestActivity" />
+        <activity android:name="com.ensias.doctorsapp.AppointementActivity" />
+        <activity android:name="com.ensias.doctorsapp.FicheInfo" />
+        <activity android:name="com.ensias.doctorsapp.PatientInfoActivity" />
+        <activity android:name="com.ensias.doctorsapp.DossierMedical" />
+        <activity android:name="com.ensias.doctorsapp.ChatActivity" />
+        <activity android:name="com.ensias.doctorsapp.PatientRequestPage" />
+        <activity android:name="com.ensias.doctorsapp.DoctorHomeActivity" />
+        <activity android:name="com.ensias.doctorsapp.EditProfileDoctorActivity" />
+        <activity android:name="com.ensias.doctorsapp.ConfirmedAppointmensActivity" />
+        <activity android:name="com.ensias.doctorsapp.PatientAppointementsActivity" />
+        <activity android:name="com.ensias.doctorsapp.ProfilePatientActivity" />
+        <activity android:name="com.ensias.doctorsapp.MyDoctorsAvtivity" />
+        <activity android:name="com.ensias.doctorsapp.ProfileDoctorActivity" />
+        <activity android:name="com.ensias.doctorsapp.EditProfilePatientActivity" />
+        <activity android:name="com.ensias.doctorsapp.DoctorAppointementActivity" />
+        <activity android:name="com.ensias.doctorsapp.FicheActivity" />
+        <activity android:name="com.ensias.doctorsapp.MyPatientsActivity" />
+        <activity android:name="com.ensias.doctorsapp.SearchPatActivity" />
+        <activity android:name="com.ensias.doctorsapp.FirstSigninActivity" />
+        <activity android:name="com.ensias.doctorsapp.HomeActivity" />
+        <activity android:name="com.ensias.doctorsapp.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
