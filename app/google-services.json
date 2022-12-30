@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "752894497714",
-    "project_id": "doctors-app-3fd2e",
-    "storage_bucket": "doctors-app-3fd2e.appspot.com"
+    "project_number": "649122311240",
+    "project_id": "doctor-8c200",
+    "storage_bucket": "doctor-8c200.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:752894497714:android:e69bf32c2e6e95ea734aab",
+        "mobilesdk_app_id": "1:649122311240:android:7c88d6476ed68ce7adbc7d",
         "android_client_info": {
           "package_name": "com.ensias.doctorsapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "752894497714-k35p9jjh55sa3nifqst69l7iofenl21h.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.ensias.doctorsapp",
-            "certificate_hash": "2314e272aeb6c9ca2bb61f9f0e4ba8fc1a4c260f"
-          }
-        },
-        {
-          "client_id": "752894497714-a4pqmicpnpg6666tsf1ctbtu82lvps2l.apps.googleusercontent.com",
+          "client_id": "649122311240-87jevueacff1f063ucurcgq3j5f316dl.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAsOIMngYQEKUldLM-gW5wnNXIREZc3WLc"
+          "current_key": "AIzaSyDwead6Yp6lfaGk9A__wwBGLEh-evO17tM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "752894497714-a4pqmicpnpg6666tsf1ctbtu82lvps2l.apps.googleusercontent.com",
+              "client_id": "649122311240-87jevueacff1f063ucurcgq3j5f316dl.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

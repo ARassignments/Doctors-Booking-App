@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private Button creatBtn;
     private EditText secondPass;
     private EditText confirme;
+    TextView titleTextView;
     SignInButton signInButton;
     FirebaseFirestore  db = FirebaseFirestore.getInstance();
     private CollectionReference UsersRef = db.collection("User");
@@ -61,9 +62,10 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        confirme = (EditText)findViewById(R.id.editText3);
-        confirme.setVisibility(View.INVISIBLE);
+        confirme = (EditText) findViewById(R.id.editText3);
         signInButton = findViewById(R.id.sign_in_button);
+        titleTextView = findViewById(R.id.titleTextView);
+        titleTextView.setText("Login");
 
         TextView textView = (TextView) signInButton.getChildAt(0);
         textView.setText("Or Sign in with Google");
@@ -74,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
         signUpBtn =(Button)findViewById(R.id.SignUpBtn);
         loginBtn = (Button)findViewById(R.id.LoginBtn);
         creatBtn = findViewById(R.id.CreateAccount);
-        signUpBtn.setVisibility(View.GONE);
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,8 +104,6 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
             }else{
-                    Toast.makeText(MainActivity.this, "vous devez rensegner toutes les champs",
-                            Toast.LENGTH_SHORT).show();
                     if(!password.equals(confirmPass)){
                         Toast.makeText(MainActivity.this, "Confirm pass don't match password",
                                 Toast.LENGTH_SHORT).show();
@@ -134,9 +133,7 @@ public class MainActivity extends AppCompatActivity {
                                     Toast.makeText(MainActivity.this, "Authentication failed.",
                                             Toast.LENGTH_SHORT).show();
                                     updateUI(null);
-
                                 }
-
                             }
                         });
             }else{
@@ -152,15 +149,16 @@ public class MainActivity extends AppCompatActivity {
                 emailText.setText("");
                 passwordText.setText("");
                 if (creatBtn.getText().toString().equals("Create Account")){
+                    titleTextView.setText("Sign up");
                     confirme.setVisibility(View.VISIBLE);
                     signUpBtn.setVisibility(View.VISIBLE);
-                    loginBtn.setVisibility(View.INVISIBLE);
+                    loginBtn.setVisibility(View.GONE);
                     creatBtn.setText("Back to login");
                     signInButton.setVisibility(View.GONE);
-                }
-                else{
-                    confirme.setVisibility(View.INVISIBLE);
-                    signUpBtn.setVisibility(View.INVISIBLE);
+                } else{
+                    titleTextView.setText("Login");
+                    confirme.setVisibility(View.GONE);
+                    signUpBtn.setVisibility(View.GONE);
                     loginBtn.setVisibility(View.VISIBLE);
                     creatBtn.setText("Create Account");
                     signInButton.setVisibility(View.VISIBLE);
