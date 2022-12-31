@@ -42,17 +42,18 @@
 
     <Button
         android:id="@+id/signOutBtn"
-        android:layout_width="154dp"
-        android:layout_height="23dp"
-        android:layout_marginBottom="4dp"
-        android:background="#C62828"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/button_danger"
         android:text="SignOut"
-        android:textColor="#ffff"
+        android:textColor="#C62828"
         android:textSize="16sp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <Button
         android:id="@+id/btnRequst"
@@ -167,7 +168,8 @@
                 android:gravity="center"
                 android:text="Home"
                 android:textColor="#ffffff"
-                android:textSize="32sp" />
+                android:textSize="25sp"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/doctorName"

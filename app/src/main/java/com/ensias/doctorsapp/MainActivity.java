@@ -51,17 +51,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
-       mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         mAuth = FirebaseAuth.getInstance();
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         confirme = (EditText) findViewById(R.id.editText3);
         signInButton = findViewById(R.id.sign_in_button);
         titleTextView = findViewById(R.id.titleTextView);
@@ -83,27 +82,25 @@ public class MainActivity extends AppCompatActivity {
                 String password=passwordText.getText().toString();
                 String confirmPass = secondPass.getText().toString();
                 if(!email.isEmpty() && !password.isEmpty() && password.equals(confirmPass)){
-                mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
-                                    Log.d("TAG", "createUserWithEmail:success");
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    updateUI(user);
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Log.w("TAG", "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(MainActivity.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-                                    updateUI(null);
+                    mAuth.createUserWithEmailAndPassword(email, password)
+                            .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        // Sign in success, update UI with the signed-in user's information
+                                        Log.d("TAG", "createUserWithEmail:success");
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        updateUI(user);
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        Log.w("TAG", "createUserWithEmail:failure", task.getException());
+                                        Toast.makeText(MainActivity.this, "Authentication failed.",
+                                                Toast.LENGTH_SHORT).show();
+                                        updateUI(null);
+                                    }
                                 }
-
-                                // ...
-                            }
-                        });
-            }else{
+                            });
+                }else{
                     if(!password.equals(confirmPass)){
                         Toast.makeText(MainActivity.this, "Confirm pass don't match password",
                                 Toast.LENGTH_SHORT).show();
@@ -221,8 +218,6 @@ public class MainActivity extends AppCompatActivity {
                             Snackbar.make(findViewById(R.id.main_layout), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
                             updateUI(null);
                         }
-
-                        // ..
                     }
                 });
     }
@@ -247,9 +242,6 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 }
                             });
-
-
-
                         } else {
                             Intent k = new Intent(MainActivity.this, FirstSigninActivity.class);
                             startActivity(k);
@@ -259,7 +251,6 @@ public class MainActivity extends AppCompatActivity {
             } catch(Exception e) {
                 e.printStackTrace();
             }
-
         }
     }
 }
