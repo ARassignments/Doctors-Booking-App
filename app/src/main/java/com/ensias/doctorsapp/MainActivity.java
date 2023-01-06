@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
                     signUpBtn.setVisibility(View.GONE);
                     loginBtn.setVisibility(View.VISIBLE);
                     creatBtn.setText("Create Account");
-                    signInButton.setVisibility(View.VISIBLE);
+                    signInButton.setVisibility(View.GONE);
                 }
             }
         });
