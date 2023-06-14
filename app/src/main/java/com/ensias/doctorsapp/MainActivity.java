@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
     SignInButton signInButton;
     FirebaseFirestore  db = FirebaseFirestore.getInstance();
     private CollectionReference UsersRef = db.collection("User");
-
     GoogleSignInClient mGoogleSignInClient;
 
     @Override
